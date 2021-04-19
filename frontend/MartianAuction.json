@@ -1,17 +1,53 @@
 [
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "ended",
-		"outputs": [
+		"inputs": [
 			{
-				"name": "",
-				"type": "bool"
+				"internalType": "address payable",
+				"name": "_beneficiary",
+				"type": "address"
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "winner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "AuctionEnded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "bidder",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "HighestBidIncreased",
+		"type": "event"
 	},
 	{
 		"constant": false,
@@ -28,34 +64,7 @@
 		"name": "beneficiary",
 		"outputs": [
 			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "withdraw",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "highestBidder",
-		"outputs": [
-			{
+				"internalType": "address payable",
 				"name": "",
 				"type": "address"
 			}
@@ -68,6 +77,7 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "address payable",
 				"name": "sender",
 				"type": "address"
 			}
@@ -80,17 +90,13 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "pendingReturn",
+		"inputs": [],
+		"name": "ended",
 		"outputs": [
 			{
+				"internalType": "bool",
 				"name": "",
-				"type": "uint256"
+				"type": "bool"
 			}
 		],
 		"payable": false,
@@ -103,6 +109,7 @@
 		"name": "highestBid",
 		"outputs": [
 			{
+				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
 			}
@@ -112,48 +119,54 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"constant": true,
+		"inputs": [],
+		"name": "highestBidder",
+		"outputs": [
 			{
-				"name": "_beneficiary",
+				"internalType": "address",
+				"name": "",
 				"type": "address"
 			}
 		],
 		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "pendingReturn",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "bidder",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "HighestBidIncreased",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "winner",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "AuctionEnded",
-		"type": "event"
+		"type": "function"
 	}
 ]
